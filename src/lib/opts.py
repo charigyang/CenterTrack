@@ -116,13 +116,13 @@ class opts(object):
     self.parser.add_argument('--optim', default='adam')
     self.parser.add_argument('--lr', type=float, default=1.25e-4, 
                              help='learning rate for batch size 32.')
-    self.parser.add_argument('--lr_step', type=str, default='60',
+    self.parser.add_argument('--lr_step', type=str, default='3',
                              help='drop learning rate by 10.')
     self.parser.add_argument('--save_point', type=str, default='90',
                              help='when to save the model to disk.')
-    self.parser.add_argument('--num_epochs', type=int, default=70,
+    self.parser.add_argument('--num_epochs', type=int, default=4,
                              help='total training epochs.')
-    self.parser.add_argument('--batch_size', type=int, default=32,
+    self.parser.add_argument('--batch_size', type=int, default=16,
                              help='batch size')
     self.parser.add_argument('--master_batch_size', type=int, default=-1,
                              help='batch size on the master gpu.')
@@ -150,7 +150,7 @@ class opts(object):
                              help='multi scale test augmentation.')
     self.parser.add_argument('--nms', action='store_true',
                              help='run nms in testing.')
-    self.parser.add_argument('--K', type=int, default=100,
+    self.parser.add_argument('--K', type=int, default=1,
                              help='max number of output objects.') 
     self.parser.add_argument('--not_prefetch_test', action='store_true',
                              help='not use parallal data pre-processing.')
